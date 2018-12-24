@@ -1,9 +1,6 @@
 <?php
 function uap_reorder_arr($arr){
-	/*
-	 * @param array
-	 * @return array
-	 */
+	
 	if (isset($arr) && count($arr)>0 && $arr !== false){
 		$new_arr = false;
 		foreach ($arr as $k=>$v){
