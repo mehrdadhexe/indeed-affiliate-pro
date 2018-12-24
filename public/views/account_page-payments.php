@@ -38,7 +38,8 @@
 			<tbody class="uap-alternate">
 				<?php foreach ($data['listing_items'] as $key => $array): ?>
 				<tr>
-					<td style="font-weight:bold;"><?php echo uap_format_price_and_currency($array['currency'], $array['amount']);?></td>
+				    <!--$array['currency']  -->
+					<td style="font-weight:bold;"><?php echo uap_format_price_and_currency("تومان", $array['amount']);?></td>
 					<td><?php echo __($array['payment_type'], 'uap');?></td>
 					<td><?php echo uap_convert_date_to_us_format($array['create_date']);?></td>
 					<td><?php echo uap_convert_date_to_us_format($array['update_date']);?></td>

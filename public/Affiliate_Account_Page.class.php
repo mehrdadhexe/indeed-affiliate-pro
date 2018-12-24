@@ -49,6 +49,10 @@ if (!class_exists('Affiliate_Account_Page')){
 				$this->run_overview();
 			} else {
 					switch ($tab){
+
+                        case 'withdraw':
+							$this->run_withdraw();
+							break;
 						case 'affiliate_link':
 							$this->run_affiliate_link();
 							break;
@@ -380,6 +384,20 @@ if (!class_exists('Affiliate_Account_Page')){
 			require_once $template;
 		}
 
+        private function run_withdraw(){
+             
+
+			$fullPath = UAP_PATH . 'public/views/account_page-withdraw.php';
+			$searchFilename = 'account_page-withdraw.php';
+			$template = apply_filters('uap_filter_on_load_template', $fullPath, $searchFilename );
+
+			require_once $template;
+
+
+
+
+
+        }
 		private function run_banners(){
 			/*
 			 * @param none

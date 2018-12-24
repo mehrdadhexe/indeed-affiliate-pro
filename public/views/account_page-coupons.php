@@ -31,7 +31,8 @@
 							$settings = unserialize($arr['settings']);
 							if ($settings){
 								if ($settings['amount_type']=='flat'){
-									echo uap_format_price_and_currency($data['currency'], $settings['amount_value']);
+								    //$data['currency']
+									echo uap_format_price_and_currency("تومان", $settings['amount_value']);
 								} else {
 									echo $settings['amount_value'] . ' %';
 								}

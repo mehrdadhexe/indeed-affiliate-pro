@@ -127,6 +127,7 @@ $tabs = array(
 						'print_link' => TRUE,
 						'icon_code' => '',
 					),
+
 					'profile' => array(
 						'type' => 'tab',
 						'label' => __('Profile', 'uap'),
@@ -428,6 +429,12 @@ foreach ($tabs as $first_slug => $array){
 					<?php endif; ?>
 
 				<?php endforeach;?>
+
+
+               	<li class="uap-ap-menu-tab-item"><a href="?uap_aff_subtab=withdraw"><i class="fa-uap fa-payments-account-uap"></i>برداشت وجه
+						  		</a></li>
+
+
 			</ul>
 		</div>
 

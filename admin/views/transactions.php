@@ -93,7 +93,9 @@
 									}
 									echo $this->print_flag_for_affiliate($u_ids[$array['affiliate_id']]) . $array['username'];
 								?></div></td>
-								<td style="font-weight:bold;"><?php echo uap_format_price_and_currency($array['currency'], $array['amount']);?></td>
+
+                                <!--$array['currency'] -->
+								<td style="font-weight:bold;"><?php echo uap_format_price_and_currency("تومان", $array['amount']);?></td>
 								<td><span class="uap-admin-aff-payment-type uap-payment-type-active-<?php echo $array['payment_type'];?>" style="font-size:12px;"><?php echo $array['payment_type'];?></span></td>
 								<td><?php echo uap_convert_date_to_us_format($array['create_date']);?></td>
 								<td><?php echo uap_convert_date_to_us_format($array['update_date']);?></td>

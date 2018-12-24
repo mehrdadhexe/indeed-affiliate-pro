@@ -4041,12 +4041,15 @@ if (!class_exists('Uap_Db')){
 					$return[$object->affiliate_id]['count_unpaid'] = (empty($temp_data->c)) ? 0 : $temp_data->c;
 					$return[$object->affiliate_id]['total_unpaid'] = (empty($temp_data->s)) ? 0 : $temp_data->s;
 					$return[$object->affiliate_id]['unpaid_currency'] = (empty($temp_data->currency)) ? 'USD' : $temp_data->currency;
+
+
 					/// getting paid items
 					$temp_data = $wpdb->get_row("SELECT COUNT(id) as c, SUM(amount) as s, currency
 													FROM $table
 													WHERE affiliate_id='" . esc_sql($object->affiliate_id) . "'
 													AND status='2'
 													AND payment='2';");
+
 					$return[$object->affiliate_id]['count_paid'] = (empty($temp_data->c)) ? 0 : $temp_data->c;
 					$return[$object->affiliate_id]['total_paid'] = (empty($temp_data->s)) ? 0 : $temp_data->s;
 					$return[$object->affiliate_id]['paid_currency'] = (empty($temp_data->currency)) ? 'USD' : $temp_data->currency;
@@ -6064,7 +6067,7 @@ if (!class_exists('Uap_Db')){
 			 */
 			/* smsc */
 			update_option('uap_license_set', 1);
-			update_option('uap_envato_code', 'فعال شده با لایسنس فرشمی');
+			update_option('uap_envato_code', 'فعال شده با لايسنس فرشمي');
 			return TRUE;
 		}
 

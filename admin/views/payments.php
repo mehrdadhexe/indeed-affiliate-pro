@@ -1,5 +1,5 @@
 <div class="uap-wrapper">
-	<div class="uap-page-title">همکاری در فروش - <span class="second-text"><?php _e('UnPaid Referrals', 'uap');?></span></div>
+	<div class="uap-page-title">همکاري در فروش - <span class="second-text"><?php _e('UnPaid Referrals', 'uap');?></span></div>
 	
 	<div class="uap-payments-stats">
 		<div class="row">
@@ -151,26 +151,34 @@
 										<?php  						
 									}
 								?></td>
-								<td><?php 
+								<td><?php
 									echo '<strong style="color: #9b4449;">'.$array['count_unpaid'].'</strong>';
 									if (!empty($array['count_unpaid'])):
 										?>
-										<div><a href="<?php echo $data['unpaid_link'] . '&affiliate=' . $id;?>"><?php _e('View', 'uap');?></a></div>									
+										<div><a href="<?php echo $data['unpaid_link'] . '&affiliate=' . $id;?>"><?php _e('View', 'uap');?></a></div>
 										<?php 
 									endif;
-								?></td>								
+								?></td>
+                                  <!--  $array['paid_currency']  -->
+								<td><?php echo uap_format_price_and_currency("تومان", round($array['total_paid'], 2));?></td>
 
-								<td><?php echo uap_format_price_and_currency($array['paid_currency'], round($array['total_paid'], 2));?></td>
+								<td>
 
-								<td><?php 
-									echo '<strong style="color: #9b4449;">' . uap_format_price_and_currency($array['unpaid_currency'], round($array['total_unpaid'], 2) ) . '</strong>';
+
+                                <?php
+
+
+                                      //$array['unpaid_currency']
+
+
+									echo '<strong style="color: #9b4449;">' .uap_format_price_and_currency("تومان", round($array['total_unpaid'], 2) ) . '</strong>';
 									if (!empty($array['total_unpaid'])){
 										?>
 										<div><a href="<?php echo $data['pay_link'] . '&affiliate=' . $id;?>"><?php _e('Pay All', 'uap');?></a>
 										<?php 
 									}	
 								?></td>
-								<td><?php 
+								<td><?php
 									if ($array['has_transactions']){
 										?>
 											<div class="referral-status-verified"><a style="color:#fff;" href="<?php echo $data['paid_link'] . '&affiliate=' . $id;?>"><?php _e('View', 'uap');?></a></div>

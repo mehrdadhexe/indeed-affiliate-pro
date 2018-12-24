@@ -1,0 +1,2 @@
+[24-Dec-2018 10:23:19 UTC] PHP Fatal error:  Call to undefined method Uap_Db::modifyGuid() in /home/bestandr/public_html/wp-content/plugins/indeed-affiliate-pro/classes/CropImage.php on line 164
+[24-Dec-2018 10:23:45 UTC] PHP Fatal error:  Call to undefined method Uap_Db::modifyGuid() in /home/bestandr/public_html/wp-content/plugins/indeed-affiliate-pro/classes/CropImage.php on line 164

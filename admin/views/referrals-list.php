@@ -154,7 +154,8 @@
 										?>
 									</td>
 									<td><?php echo $array['description'];?></td>
-									<td><?php echo '<b>' . uap_format_price_and_currency($array['currency'], $array['amount']) . '</b>';?></td>
+                                    <!--$array['currency'] -->
+									<td><?php echo '<b>' . uap_format_price_and_currency("تومان", $array['amount']) . '</b>';?></td>
 									<td style="color: #396;"><?php echo uap_convert_date_to_us_format($array['date']);?></td>
 									<td><?php
 											/*

@@ -342,6 +342,9 @@ if (!class_exists('Uap_Main_Admin')){
 				case 'dashboard':
 					$this->print_dashboard();
 					break;
+               /* case 'withdraw':
+					$this->print_withdraw();
+					break;*/
 				case 'affiliates':
 					$this->print_affiliates();
 					break;
@@ -452,6 +455,7 @@ if (!class_exists('Uap_Main_Admin')){
 											'showcases' => __('Showcases', 'uap'),
 											'visits' => __('Visits', 'uap'),
 											'referrals' => __('Referrals', 'uap'),
+                                            /*'withdraw' => 'درخواست های برداشت',  */
 											'payments' => __('Payments', 'uap'),
 											'magic_features' => __('Magic Features', 'uap'),
 											'notifications' => __('Notifications', 'uap'),
@@ -496,6 +500,20 @@ if (!class_exists('Uap_Main_Admin')){
 			$data['top_affiliates'] = $indeed_db->get_top_affiliates_by_amount();
 			$this->print_top_messages();
 			require_once $this->admin_view_path . 'dashboard.php';
+		}
+         private function print_withdraw(){
+			/*
+			 * @param none
+			 * @return string
+			 */
+			global $indeed_db;
+			if (isset($_REQUEST['uap_save_licensing_code']) && isset($_REQUEST['uap_licensing_code'])){
+				$submited = $indeed_db->envato_licensing($_REQUEST['uap_licensing_code']);
+			}
+			$data = $indeed_db->return_settings_from_wp_option('licensing');
+			$disabled = ($this->check_curl()) ? '' : 'disabled';
+			$this->print_top_messages();
+			require_once $this->admin_view_path . 'withdraw.php';
 		}
 
 		private function print_help(){

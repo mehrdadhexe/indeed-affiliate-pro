@@ -1,6 +1,9 @@
 <?php
 function uap_reorder_arr($arr){
-	
+	/*
+	 * @param array
+	 * @return array
+	 */
 	if (isset($arr) && count($arr)>0 && $arr !== false){
 		$new_arr = false;
 		foreach ($arr as $k=>$v){
@@ -1993,6 +1996,7 @@ function uap_format_price_and_currency($currency='', $price_value=''){
 	 * @return string
 	 */
 	 $output = '';
+       
 	 $data = get_option('uap_currency_position');
 	 if (empty($data)){
 	 	$data = 'right';

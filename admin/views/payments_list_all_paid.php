@@ -42,7 +42,8 @@
 					echo $this->print_flag_for_affiliate($u_ids[$array['affiliate_id']]) . $array['username'];
 					?></div></td>
 					<td><?php echo $array['reference'];?></td>
-					<td><?php echo uap_format_price_and_currency($array['currency'], $array['amount']);?></td>
+                   <!-- $array['currency']    -->
+					<td><?php echo uap_format_price_and_currency("تومان", $array['amount']);?></td>
 					<td><?php echo uap_convert_date_to_us_format($array['date']);?></td>
 					<td><?php
 						switch ($array['payment']){
